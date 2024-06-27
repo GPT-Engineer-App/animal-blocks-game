@@ -42,10 +42,11 @@ const Index = () => {
       </Card>
       <div className="w-full flex justify-center">
         <Tetris>
-          {({ Gameboard, points, linesCleared, state, reset, pause, resume }) => (
+          {({ Gameboard, points, linesCleared, state, reset, pause, resume, start }) => (
             <div className="flex flex-col items-center">
               <Gameboard />
               <div className="flex space-x-2 mt-4">
+                <Button onClick={start}>开始</Button>
                 <Button onClick={reset}>重置</Button>
                 {state === "PAUSED" ? (
                   <Button onClick={resume}>继续</Button>

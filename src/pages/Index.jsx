@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const characters = [
-  { name: "Hippo", image: "/images/hippo.png" },
-  { name: "Ostrich", image: "/images/ostrich.png" },
-  { name: "Cat", image: "/images/cat.png" },
-  { name: "Dog", image: "/images/dog.png" },
-  { name: "Sheep", image: "/images/sheep.png" },
-  { name: "Fish", image: "/images/fish.png" },
+  { name: "河马", image: "/images/hippo.png" },
+  { name: "鸵鸟", image: "/images/ostrich.png" },
+  { name: "猫", image: "/images/cat.png" },
+  { name: "狗", image: "/images/dog.png" },
+  { name: "羊", image: "/images/sheep.png" },
+  { name: "鱼", image: "/images/fish.png" },
 ];
 
 const Index = () => {
@@ -20,12 +20,12 @@ const Index = () => {
     <div className="h-screen w-screen flex flex-col items-center justify-center space-y-4">
       <Card className="w-96">
         <CardHeader>
-          <CardTitle>Select Your Character</CardTitle>
+          <CardTitle>选择你的角色</CardTitle>
         </CardHeader>
         <CardContent>
           <Select onValueChange={(value) => setSelectedCharacter(characters.find(c => c.name === value))}>
             <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select a character" />
+              <SelectValue placeholder="选择一个角色" />
             </SelectTrigger>
             <SelectContent>
               {characters.map((character) => (
@@ -46,16 +46,16 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <Gameboard />
               <div className="flex space-x-2 mt-4">
-                <Button onClick={reset}>Reset</Button>
+                <Button onClick={reset}>重置</Button>
                 {state === "PAUSED" ? (
-                  <Button onClick={resume}>Resume</Button>
+                  <Button onClick={resume}>继续</Button>
                 ) : (
-                  <Button onClick={pause}>Pause</Button>
+                  <Button onClick={pause}>暂停</Button>
                 )}
               </div>
               <div className="mt-4">
-                <p>Points: {points}</p>
-                <p>Lines Cleared: {linesCleared}</p>
+                <p>分数: {points}</p>
+                <p>消除的行数: {linesCleared}</p>
               </div>
             </div>
           )}
